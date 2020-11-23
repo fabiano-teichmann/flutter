@@ -21,6 +21,21 @@ class HomePageState extends State<HomePage> {
             'Meu app',
             style: TextStyle(fontSize: 40.0),
           ))),
+          body: Container(
+            height: 530,
+            width: 500,
+            color: Colors.blue[300],
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                height: 100,
+                width: 100,
+                color: Colors.amber,
+
+              ),
+            ),
+          ),
+                      
           floatingActionButton: FloatingActionButton(
             onPressed: () {
               setState(() {
@@ -30,13 +45,6 @@ class HomePageState extends State<HomePage> {
             child: Icon(Icons.add),
           ),
           
-          body: Center(
-              child: Text(
-                'Contando: $count',
-                style: TextStyle(fontSize: 30.0, color: Colors.blue[300]),
-              ),
-            ),
-                      
           ),
     );
   }
