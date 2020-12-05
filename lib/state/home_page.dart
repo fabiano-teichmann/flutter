@@ -22,7 +22,12 @@ class HomePageState extends State<HomePage> {
           )),
           actions: [CustomSwith()],
         ),
-        body: Center(child: CustomSwith()),
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Center(
+              child: CustomCol(count)),
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             setState(() {
@@ -51,6 +56,48 @@ class CustomSwith extends StatelessWidget {
       onChanged: (value) {
         AppController.instance.changeTheme();
       },
+    );
+  }
+}
+
+class CustomCol extends StatelessWidget {
+  var count;
+  CustomCol(this.count);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      //for children
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text('Contator: $count'),
+        Container(height: 10,),
+        CustomSwith(),
+        Container(height: 20,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+
+          children: [
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.amber,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.blue,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.cyan,
+            ),
+          ],
+        )
+      ],
     );
   }
 }
