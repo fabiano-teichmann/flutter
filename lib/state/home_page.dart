@@ -15,20 +15,14 @@ class HomePageState extends State<HomePage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-            title: Center(
-                child: Text(
-          'State Flutter',
-          style: TextStyle(fontSize: 40.0),
-        ))),
-        body: Center(
-          child: Switch(
-            value: AppController.instance.isDartTheme,
-            onChanged: (value) {
-              AppController.instance.changeTheme();
-            },
-          ),
+          title: Center(
+              child: Text(
+            'State Flutter',
+            style: TextStyle(fontSize: 40.0),
+          )),
+          actions: [CustomSwith()],
         ),
-        
+        body: Center(child: CustomSwith()),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             setState(() {
@@ -45,6 +39,18 @@ class HomePageState extends State<HomePage> {
             ? Brightness.dark
             : Brightness.light,
       ),
+    );
+  }
+}
+
+class CustomSwith extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      value: AppController.instance.isDartTheme,
+      onChanged: (value) {
+        AppController.instance.changeTheme();
+      },
     );
   }
 }
