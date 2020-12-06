@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:learning_flutter/state/home_page.dart';
 
@@ -42,10 +41,8 @@ class _LoginPageState extends State<LoginPage> {
               RaisedButton(
                 onPressed: () {
                   if (email == 'fabiano@gmail.com' && password == 'carai') {
-                    //Navigator.of(context).pushReplacement without return
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => HomePage()),
-                    ) ;
+                    //Navigator.of(context).pushReplacementNamed without return
+                    Navigator.of(context).pushNamed('/home');
                   } else {
                     print('Errou !!!');
                   }
