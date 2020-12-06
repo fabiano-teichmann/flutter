@@ -22,8 +22,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 width: 80,
                 height: 80,
-                child: Image.network(
-                    'https://parallelcodes.com/wp-content/uploads/2018/07/Android-Login-with-Google-Account-Programmatically-Example-02.png'),
+                child: Image.asset('assets/images/cadeado.png'),
               ),
               SizedBox(
                 height: 30,
