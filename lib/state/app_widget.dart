@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:learning_flutter/login_page.dart';
 import 'package:learning_flutter/state/app_controller.dart';
-import 'package:learning_flutter/state/home_page.dart';
+//import 'package:learning_flutter/state/home_page.dart';
 
 class AppWidget extends StatelessWidget {
   // final String title;
@@ -13,7 +14,7 @@ class AppWidget extends StatelessWidget {
       animation: AppController.instance,
       builder: (context, child) {
         return MaterialApp(
-          home: HomePage(),    
+          home: LoginPage(),    
         );
       },
     );

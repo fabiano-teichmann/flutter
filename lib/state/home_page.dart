@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:learning_flutter/state/app_controller.dart';
 
@@ -26,7 +27,7 @@ class HomePageState extends State<HomePage> {
           width: double.infinity,
           height: double.infinity,
           child: Center(
-              child: CustomCol(count)),
+              child: MyListView(count)),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
@@ -53,6 +54,7 @@ class CustomSwith extends StatelessWidget {
   Widget build(BuildContext context) {
     return Switch(
       value: AppController.instance.isDartTheme,
+      
       onChanged: (value) {
         AppController.instance.changeTheme();
       },
@@ -75,6 +77,67 @@ class CustomCol extends StatelessWidget {
         Container(height: 10,),
         CustomSwith(),
         Container(height: 20,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+
+          children: [
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.amber,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.blue,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.cyan,
+            ),
+          ],
+        )
+      ],
+    );
+  }
+}
+
+
+class MyListView extends StatelessWidget {
+  // used for scroll page if use column error happen if overtake height screen
+  var count;
+  MyListView(this.count);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Text('Contator: $count'),
+        Container(height: 10,),
+        CustomSwith(),
+        Container(height: 50,),
+        Text('Contator: $count'),
+        Container(height: 10,),
+        CustomSwith(),
+        Container(height: 50,),
+        Text('Contator: $count'),
+        Container(height: 10,),
+        CustomSwith(),
+        Container(height: 50,),
+        Text('Contator: $count'),
+        Container(height: 50,),
+        CustomSwith(),
+        Container(height: 50,),
+        Text('Contator: $count'),
+        Container(height: 10,),
+        CustomSwith(),
+        Container(height: 50,),
+        Text('Contator: $count'),
+        Container(height: 10,),
+        CustomSwith(),
+        Container(height: 50,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
