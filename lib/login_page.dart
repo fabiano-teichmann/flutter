@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:learning_flutter/state/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -20,6 +19,15 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(
+                width: 80,
+                height: 80,
+                child: Image.network(
+                    'https://parallelcodes.com/wp-content/uploads/2018/07/Android-Login-with-Google-Account-Programmatically-Example-02.png'),
+              ),
+              SizedBox(
+                height: 30,
+              ),
               TextField(
                 onChanged: (text) {
                   email = text;
