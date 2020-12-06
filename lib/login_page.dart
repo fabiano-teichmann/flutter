@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:learning_flutter/state/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -40,7 +42,10 @@ class _LoginPageState extends State<LoginPage> {
               RaisedButton(
                 onPressed: () {
                   if (email == 'fabiano@gmail.com' && password == 'carai') {
-                    print('Correto !!!');
+                    //Navigator.of(context).pushReplacement without return
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    ) ;
                   } else {
                     print('Errou !!!');
                   }
