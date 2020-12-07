@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:learning_flutter/state/app_controller.dart';
+import 'package:learning_flutter/widget/list_view.dart';
+import 'package:learning_flutter/widget/navigation.dart';
+import 'package:learning_flutter/widget/swith.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,6 +17,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        drawer: Navigation(),
         appBar: AppBar(
           title: Center(
               child: Text(
@@ -44,122 +48,6 @@ class HomePageState extends State<HomePage> {
             ? Brightness.dark
             : Brightness.light,
       ),
-    );
-  }
-}
-
-class CustomSwith extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Switch(
-      value: AppController.instance.isDartTheme,
-      
-      onChanged: (value) {
-        AppController.instance.changeTheme();
-      },
-    );
-  }
-}
-
-class CustomCol extends StatelessWidget {
-  var count;
-  CustomCol(this.count);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      //for children
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text('Contator: $count'),
-        Container(height: 10,),
-        CustomSwith(),
-        Container(height: 20,),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-
-          children: [
-            Container(
-              width: 50,
-              height: 50,
-              color: Colors.amber,
-            ),
-            Container(
-              width: 50,
-              height: 50,
-              color: Colors.blue,
-            ),
-            Container(
-              width: 50,
-              height: 50,
-              color: Colors.cyan,
-            ),
-          ],
-        )
-      ],
-    );
-  }
-}
-
-
-class MyListView extends StatelessWidget {
-  // used for scroll page if use column error happen if overtake height screen
-  var count;
-  MyListView(this.count);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Text('Contator: $count'),
-        Container(height: 10,),
-        CustomSwith(),
-        Container(height: 50,),
-        Text('Contator: $count'),
-        Container(height: 10,),
-        CustomSwith(),
-        Container(height: 50,),
-        Text('Contator: $count'),
-        Container(height: 10,),
-        CustomSwith(),
-        Container(height: 50,),
-        Text('Contator: $count'),
-        Container(height: 50,),
-        CustomSwith(),
-        Container(height: 50,),
-        Text('Contator: $count'),
-        Container(height: 10,),
-        CustomSwith(),
-        Container(height: 50,),
-        Text('Contator: $count'),
-        Container(height: 10,),
-        CustomSwith(),
-        Container(height: 50,),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-
-          children: [
-            Container(
-              width: 50,
-              height: 50,
-              color: Colors.amber,
-            ),
-            Container(
-              width: 50,
-              height: 50,
-              color: Colors.blue,
-            ),
-            Container(
-              width: 50,
-              height: 50,
-              color: Colors.cyan,
-            ),
-          ],
-        )
-      ],
     );
   }
 }
